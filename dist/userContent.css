@@ -40,7 +40,7 @@
   :is(input:not([type=button], [type=submit], [type=reset], [type=image], [type=checkbox], [type=radio], [type=file], [type=color], [type=range]), textarea, [contenteditable=true], [contenteditable=""]) { cursor: var(--cmc-ibeam), text !important; }
   :is(:disabled, [aria-disabled=true]) { cursor: var(--cmc-arrow), not-allowed !important; }
   :is([style*="cursor: wait"], [style*="cursor:wait"], [style*="cursor: progress"], [style*="cursor:progress"]), :is([style*="cursor: wait"], [style*="cursor:wait"], [style*="cursor: progress"], [style*="cursor:progress"]) * {
-    cursor: var(--cmc-watch-0), wait !important;
+    cursor: var(--cmc-watch-0), wait;
     animation: cmc-spin 0.8s step-end infinite;
   }
 }

@@ -112,7 +112,7 @@
   }
 
   /* Everything defaults to the classic arrow ... */
-  :root:has(#theme-ClassicMacCursors) * {
+  :root:has(#theme-ClassicMacCursors) *:not(:is([busy], [wait-cursor], [style*="cursor: wait"], [style*="cursor:wait"], [style*="cursor: progress"], [style*="cursor:progress"]), :is([busy], [wait-cursor], [style*="cursor: wait"], [style*="cursor:wait"], [style*="cursor: progress"], [style*="cursor:progress"]) *) {
     cursor: var(--cmc-arrow), default !important;
   }
   /* ... clickable things get the pointing hand ... */
@@ -131,7 +131,7 @@
   /* ... and anything busy gets the animated loader. */
   :root:has(#theme-ClassicMacCursors) :is([busy], [wait-cursor], [style*="cursor: wait"], [style*="cursor:wait"], [style*="cursor: progress"], [style*="cursor:progress"]),
   :root:has(#theme-ClassicMacCursors) :is([busy], [wait-cursor], [style*="cursor: wait"], [style*="cursor:wait"], [style*="cursor: progress"], [style*="cursor:progress"]) * {
-    cursor: var(--cmc-wait-fixed, var(--cmc-wait-0)), wait !important;
+    cursor: var(--cmc-wait-fixed, var(--cmc-wait-0)), wait;
     animation: var(--cmc-anim);
   }
 }

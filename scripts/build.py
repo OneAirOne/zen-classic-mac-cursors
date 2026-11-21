@@ -182,6 +182,9 @@ BUSY_ATTR = ('[style*="cursor: wait"], [style*="cursor:wait"], '
              '[style*="cursor: progress"], [style*="cursor:progress"]')
 
 
+BUSY_SEL = f"[busy], [wait-cursor], {BUSY_ATTR}"
+
+
 def keyframes(prefix):
     steps = "\n".join(
         f"  {round(i * 100 / FRAMES, 3)}% {{ cursor: var({prefix}{i}), wait; animation-timing-function: step-end; }}"
@@ -213,7 +216,7 @@ def chrome_css(cursors):
   {keyframes("--cmc-wait-").replace(chr(10), chr(10) + "  ")}
 
   /* Everything defaults to the classic arrow ... */
-  :root:has(#{MOD_ID}) * {{
+  :root:has(#{MOD_ID}) *:not(:is({BUSY_SEL}), :is({BUSY_SEL}) *) {{
     cursor: var(--cmc-arrow), default !important;
   }}
   /* ... clickable things get the pointing hand ... */
@@ -230,9 +233,9 @@ def chrome_css(cursors):
     cursor: var(--cmc-ibeam), text !important;
   }}
   /* ... and anything busy gets the animated loader. */
-  :root:has(#{MOD_ID}) :is([busy], [wait-cursor], {BUSY_ATTR}),
-  :root:has(#{MOD_ID}) :is([busy], [wait-cursor], {BUSY_ATTR}) * {{
-    cursor: var(--cmc-wait-fixed, var(--cmc-wait-0)), wait !important;
+  :root:has(#{MOD_ID}) :is({BUSY_SEL}),
+  :root:has(#{MOD_ID}) :is({BUSY_SEL}) * {{
+    cursor: var(--cmc-wait-fixed, var(--cmc-wait-0)), wait;
     animation: var(--cmc-anim);
   }}
 }}
@@ -261,7 +264,7 @@ def content_css(cursors, size):
   :is({TEXT_FIELD}) {{ cursor: var(--cmc-ibeam), text !important; }}
   :is(:disabled, [aria-disabled=true]) {{ cursor: var(--cmc-arrow), not-allowed !important; }}
   :is({BUSY_ATTR}), :is({BUSY_ATTR}) * {{
-    cursor: var(--cmc-watch-0), wait !important;
+    cursor: var(--cmc-watch-0), wait;
     animation: cmc-spin 0.8s step-end infinite;
   }}
 }}
