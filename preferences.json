@@ -1,0 +1,36 @@
+[
+    {
+        "property": "theme.classicmaccursors.size",
+        "label": "Cursor size",
+        "type": "dropdown",
+        "placeholder": "Select a size",
+        "defaultValue": "2",
+        "options": [
+            { "label": "Small (1x)", "value": "1" },
+            { "label": "Medium (2x)", "value": "2" },
+            { "label": "Large (3x)", "value": "3" }
+        ]
+    },
+    {
+        "property": "theme.classicmaccursors.loader",
+        "label": "Loader style",
+        "type": "dropdown",
+        "placeholder": "Select a loader",
+        "defaultValue": "watch",
+        "options": [
+            { "label": "Wristwatch (System 7)", "value": "watch" },
+            { "label": "Spinning ball (B&W)", "value": "ball" }
+        ]
+    },
+    {
+        "property": "theme.classicmaccursors.animate",
+        "label": "Loader animation",
+        "type": "dropdown",
+        "placeholder": "Select",
+        "defaultValue": "animated",
+        "options": [
+            { "label": "Animated", "value": "animated" },
+            { "label": "Static (first frame)", "value": "static" }
+        ]
+    }
+]

@@ -1,0 +1,19 @@
+hotspot: 5 0
+halo: no
+-----XX---------
+----XooX--------
+----XooX--------
+----XooX--------
+----XooXXX------
+----XooXooXXX---
+-XX-XooXooXooXX-
+XooXXooooooooXoX
+XoooXooooooooooX
+-XooooooooooooX-
+--XoooooooooooX-
+--XooooooooooX--
+---XooooooooooX-
+---XoooooooooX--
+----XooooooooX--
+----XooooooooX--
+----XXXXXXXXXX--
